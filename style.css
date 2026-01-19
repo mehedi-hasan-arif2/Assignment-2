@@ -101,6 +101,10 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 62, 181, 0.4);
 }
 
+.menu-checkbox, .hamburger-icon {
+    display: none; 
+}
+
 /* Start of Banner Section */
 .banner-section {
     background-image: url('assets/hero-bg.png');
@@ -120,6 +124,19 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/*Fade-in Animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .banner-visual {
@@ -643,9 +660,192 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* Footer Line */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1); 
+    margin: 40px auto 25px; 
+    width: 50%; 
+    max-width: 500px;
+}
+
 .copyright-text {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.4);
     margin: 0;
     padding-top: 5px; 
+}
+
+/* Start of Responsive */
+@media screen and (max-width: 992px) {
+    /* Global Responsive */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navbar Section */
+    body .header .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    body .header .nav-links, 
+    body .header .btn-primary {
+        display: none; 
+    }
+
+    body .header .nav-logo {
+        margin-right: auto;
+        font-size: 18px;
+    }
+
+    body .header .hamburger-icon {
+        display: block;
+        margin-left: auto;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Banner Section */
+    body .banner-section {
+        padding: 20px 10px;
+        background-size: 100% 100%;
+        width: 100%;
+    }
+
+    body .banner-section .visual-wrapper {
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    body .banner-section .mic-img { 
+        width: 30px; 
+    }
+
+    body .banner-section .badge-new {
+        font-size: 8px;
+        top: 10px;
+        right: 5px;
+        padding: 2px 6px;
+    }
+
+    body .banner-section .banner-title {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    body .banner-section .banner-desc {
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    body .banner-section .banner-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+    }
+
+    body .banner-section .btn-spotify, 
+    body .banner-section .btn-subscribe {
+        width: 120px;
+        height: 35px;
+        font-size: 9px;
+        padding: 0 5px;
+        border-radius: 40px;
+    }
+
+    /* About & Stats Section */
+    body .about-section .stats-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px;
+    }
+
+    body .about-section .stat-number { 
+        font-size: 20px; 
+    }
+
+    body .about-section .stat-label { 
+        font-size: 9px; 
+    }
+
+    /* Why Choose Section */
+    body .choose-section .choose-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    body .choose-section .choose-card {
+        padding: 20px;
+    }
+
+    body .choose-section .choose-title { 
+        font-size: 16px; 
+    }
+
+    /* Episodes & Host Section */
+    body .episodes-section .episodes-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    body .host-section .host-card {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    body .host-section .host-image-box { 
+        width: 150px; 
+        height: 150px; 
+    }
+
+    body .host-section .host-name { 
+        font-size: 22px; 
+    }
+
+    /* Footer Section */
+    body .footer-section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    body .footer-section .footer-logo {
+        font-size: 32px;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    body .footer-section .platform-list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: 15px 30px;
+        margin-bottom: 20px;
+    }
+
+    body .footer-section .platform-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    body .footer-section .copyright-text {
+        font-size: 12px;
+        opacity: 0.7;
+        margin-top: 20px;
+        display: block;
+    }
 }
