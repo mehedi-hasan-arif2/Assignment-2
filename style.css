@@ -501,3 +501,85 @@ body {
     color: #00ff88; 
     font-weight: 600;
 }
+
+/* Start of Host Section */
+.host-section {
+    padding: 80px 0;
+    background-color: #0b021d; /* Same as main BG */
+}
+
+.host-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.host-card {
+    background-color: #1a0b2e; /* Card BG */
+    border-radius: 40px; /* High radius as per Figma */
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.host-image-box {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+}
+
+.host-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Circle shape as per Figma */
+}
+
+.host-info {
+    text-align: left;
+}
+
+.host-name {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.host-bio {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.social-link img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.social-link:hover {
+    background: linear-gradient(35deg, #FFE84A, #FF3EB5, #6A00FF);
+    border: none; 
+    transform: translateY(-5px);
+   
+}
