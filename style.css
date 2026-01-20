@@ -22,22 +22,64 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 10%; 
-    max-width: 1440px; 
-    margin: 0 auto;    
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 25px 0;
 }
 
+/* Logo Animation */
 .nav-logo {
-    font-size: 28px; 
+    display: flex;
+    font-size: 30px;
     font-weight: 800;
+    gap: 4px;
 }
 
-/* Gradient for Wave logo */
-.nav-logo span {
-    background: linear-gradient(35deg, #FFE84A, #FF3EB5, #6A00FF);
+.nav-logo .letter {
+    display: inline-block;
+    color: #ffffff; 
+    animation: flipReveal 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: center;
+}
+
+.word-wave .letter {
+    background: linear-gradient(90deg, #FFE84A, #FF3EB5, #6A00FF, #FFE84A);
+    background-size: 300% auto; 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: flipReveal 3s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+               continuousColor 4s linear infinite; 
+}
+
+.nav-logo .letter:nth-child(1) { animation-delay: 0.1s; }
+.nav-logo .letter:nth-child(2) { animation-delay: 0.2s; }
+.nav-logo .letter:nth-child(3) { animation-delay: 0.3s; }
+.nav-logo .letter:nth-child(4) { animation-delay: 0.4s; }
+
+.word-wave .letter:nth-child(1) { animation-delay: 0.5s; }
+.word-wave .letter:nth-child(2) { animation-delay: 0.6s; }
+.word-wave .letter:nth-child(3) { animation-delay: 0.7s; }
+.word-wave .letter:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes flipReveal {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg) scale(0.8);
+    }
+    20%, 80% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: rotateX(90deg) scale(0.8);
+    }
+}
+
+@keyframes continuousColor {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
 }
 
 .nav-links {
@@ -678,7 +720,7 @@ body {
 }
 
 /* Start of Responsive */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 576px) {
     /* Global Responsive */
     body {
         overflow-x: hidden;
@@ -716,9 +758,7 @@ body {
 
     /* Banner Section */
     body .banner-section {
-        padding: 20px 10px;
-        background-size: 100% 100%;
-        width: 100%;
+        background-size: 100% 100%; 
     }
 
     body .banner-section .visual-wrapper {
@@ -748,104 +788,201 @@ body {
     }
 
     body .banner-section .banner-actions {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 6px;
-        width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px; 
+    width: 100%;
     }
 
-    body .banner-section .btn-spotify, 
+   body .banner-section .btn-spotify, 
+   body .banner-section .btn-subscribe {
+    width: auto; 
+    height: 40px; 
+    font-size: 11px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    }
+
+    /* Spotify */
+    body .banner-section .btn-spotify {
+    padding: 0 25px; 
+    }
+
+    /* Subscribe */
     body .banner-section .btn-subscribe {
-        width: 120px;
-        height: 35px;
-        font-size: 9px;
-        padding: 0 5px;
-        border-radius: 40px;
+    padding: 0 18px; 
     }
 
     /* About & Stats Section */
+    body .about-section .about-title {
+        font-size: 24px; 
+        font-weight: 800;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    body .about-section .about-desc {
+        font-size: 13px; 
+        line-height: 1.4;
+        margin-bottom: 20px;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    /* Overlay and Divider  */
+    body .about-section .overlay.divider-overlay,
+    body .about-section .divider-wrapper {
+        margin: 15px 0;
+        height: 1px;
+    }
+
     body .about-section .stats-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 20px;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px 10px; 
+        padding: 0;
+        margin-top: 20px;
     }
 
     body .about-section .stat-number { 
-        font-size: 20px; 
+        font-size: 26px; 
+        font-weight: 800;
+        margin-bottom: 2px;
     }
 
     body .about-section .stat-label { 
         font-size: 9px; 
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+    }
+
+    /* About Sub Desc */
+    body .about-section .about-sub-desc {
+        margin-top: 15px;
+        font-size: 11px;
     }
 
     /* Why Choose Section */
+    body .choose-section .section-title {
+    font-size: 24px; 
+    white-space: nowrap; 
+    text-align: center;
+    margin-bottom: 25px;
+    width: 100%;
+    }
+
     body .choose-section .choose-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
     }
 
     body .choose-section .choose-card {
-        padding: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    grid-column: auto ;
+    grid-row: auto ;
     }
 
     body .choose-section .choose-title { 
-        font-size: 16px; 
+    font-size: 17px; 
+    margin-bottom: 8px;
     }
 
-    /* Episodes & Host Section */
+    body .choose-section .choose-desc {
+    font-size: 13px;
+    line-height: 1.4;
+    }
+
+    /* Features Episodes Section */
+    body .episodes-section .section-title {
+       font-size: 24px; 
+       white-space: nowrap; 
+       text-align: center;
+       margin-bottom: 30px;
+       width: 100%;
+    }
+
     body .episodes-section .episodes-grid { 
         grid-template-columns: 1fr; 
     }
 
+    /* Host Section */
+    body .host-section .section-title {
+      font-size: 26px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
     body .host-section .host-card {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+      flex-direction: column;
+      align-items: center; 
+      padding: 30px 20px;
+      gap: 25px;
+      text-align: center; 
     }
 
     body .host-section .host-image-box { 
-        width: 150px; 
-        height: 150px; 
+      width: 180px; 
+      height: 180px; 
+    }
+
+    body .host-section .host-info {
+      text-align: center; 
     }
 
     body .host-section .host-name { 
-        font-size: 22px; 
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
+   body .host-section .host-bio {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    body .host-section .social-icons {
+      justify-content: center; 
+      gap: 12px;
+    }
+    
     /* Footer Section */
     body .footer-section {
-        padding: 40px 20px;
-        text-align: center;
+      background-size: 100% 100%;   
     }
 
-    body .footer-section .footer-logo {
-        font-size: 32px;
-        margin-bottom: 25px;
-        display: block;
+    body .footer-logo {
+     font-size: 34px;
+     margin-bottom: 20px;
     }
 
     body .footer-section .platform-list {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: center;
-        gap: 15px 30px;
-        margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, auto); 
+      justify-content: center;
+      gap: 15px 40px;
+      margin-bottom: 40px;
+      width: 100%;
     }
 
-    body .footer-section .platform-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
+    body .platform-item span {
+      font-size: 14px;
     }
 
-    body .footer-section .copyright-text {
-        font-size: 12px;
-        opacity: 0.7;
-        margin-top: 20px;
-        display: block;
+    body .footer-divider {
+      width: 85%;
+      max-width: 450px;
+      margin: 0 auto 20px;
+    }
+
+    body .copyright-text {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
     }
 }
