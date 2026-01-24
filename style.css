@@ -717,10 +717,283 @@ body {
     padding-top: 5px; 
 }
 
-/* Start of Responsive */
-@media screen and (max-width: 992px) {
+         
+
+/* ==================== START OF RESPONSIVE ==================== */
+  
+/*Large Device (above 992px) Desktop: 992px and up */
+@media screen and (min-width: 992px) {
     /* Navbar Section */
-    body .header .nav-container {
+    .nav-container {
+        max-width: 1140px;
+        padding: 25px 0;
+    }
+
+    /* Banner Section */
+    .banner-title {
+        font-size: 56px; /* Slightly larger for big screens */
+    }
+
+    /* Choose Grid Layout */
+    .choose-grid {
+        grid-template-columns: 0.7fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    /* Episodes Section */
+    .episodes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Host Section */
+    .host-card {
+        padding: 50px;
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .host-image-box {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Footer Section */
+    .footer-logo {
+        font-size: 56px;
+    }
+}
+           
+/* Medium Device (576px to 992px) Tablet/Big Phones */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+    /* Navbar Section */
+    .header .nav-container {
+      padding: 15px 20px;
+    }
+
+    .nav-links,
+    .btn-primary {
+      display: flex;
+      gap: 12px; 
+    }
+
+    /* Subscribe Button */
+    .btn-primary {
+      padding: 8px 16px;   
+      font-size: 13px;     
+      border-radius: 40px; 
+    }
+
+    .nav-logo {
+      font-size: 22px;    
+    }
+    
+    /* Banner Section */
+    .banner-section {
+      background-size: 100% 100%;         
+      min-height: 60vh;             
+      padding: 60px 0;              
+    }
+
+    .banner-section .visual-wrapper {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .banner-section .mic-img {
+        width: 60px;
+    }
+
+    .banner-section .badge-new {
+        font-size: 10px;
+        top: 15px;
+        right: 10px;
+        padding: 3px 8px;
+    }
+
+    .banner-section .banner-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .banner-section .banner-desc {
+        font-size: 14px;
+        max-width: 500px;
+        margin: 0 auto 15px;
+    }
+
+    .banner-section .banner-actions {
+        gap: 15px;
+    }
+
+    .banner-section .btn-spotify,
+    .banner-section .btn-subscribe {
+        height: 45px;
+        font-size: 13px;
+        padding: 0 20px;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 60px 0 80px 0;
+    }
+
+    .about-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .about-desc {
+        font-size: 16px;
+        max-width: 600px;
+    }
+
+    .about-sub-desc {
+        font-size: 14px;
+        margin-top: 25px;
+    }
+
+     /* Top Overlay*/
+   .about-section .overlay.top {
+        height: 60px;
+    }
+
+    /* Bottom Overlay*/
+    .about-section .overlay.bottom {
+         height: 70px; 
+    }
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 20px;
+        padding: 0 30px;
+        margin-top: 50px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    /* Why Choose Section */
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 20px;
+      align-items: stretch; 
+    }
+
+   .card-premium, 
+   .card-mobile, 
+   .card-global, 
+   .card-exclusive, 
+   .card-resource {
+      grid-column: span 1 !important;
+      grid-row: auto !important;
+      display: flex; 
+      flex-direction: column;
+    }
+
+    .card-premium {
+       grid-column: span 2 !important;
+    }
+
+    .choose-card {
+       height: 100%; 
+       padding: 25px;
+       border-radius: 20px;
+    }
+
+    .choose-desc {
+       flex-grow: 1; 
+       font-size: 13.5px;
+       line-height: 1.6;
+    }
+
+    /* Featured Episodes */
+    .episodes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 20px;
+      align-items: stretch; 
+    }
+
+    .episode-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .episode-info {
+       flex-grow: 1; 
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+    }
+
+   .episode-title {
+      font-size: 18px; 
+    }
+
+    /* Host Section */
+    .host-section {
+        padding: 60px 0;
+    }
+
+    .host-card {
+        flex-direction: row;
+        gap: 25px;
+        padding: 40px 20px;
+        align-items: flex-start;
+    }
+
+    .host-image-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .host-name {
+        font-size: 28px;
+    }
+
+    .host-bio {
+        font-size: 14px;
+    }
+
+    /* Footer Section */
+    .footer-section {
+        padding: 60px 20px;
+    }
+
+    .footer-logo {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .platform-list {
+        gap: 20px 25px;
+    }
+
+    .platform-item span {
+        font-size: 15px;
+    }
+
+    .footer-divider {
+        width: 85%;
+    }
+
+    .copyright-text {
+        font-size: 14px;
+    }
+}
+
+/* Small Device (Up to 576px) Mobile */
+@media screen and (max-width: 576px) {
+    /* Navbar Section */
+    .header .nav-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -729,17 +1002,17 @@ body {
         box-sizing: border-box;
     }
 
-    body .header .nav-links, 
-    body .header .btn-primary {
+    .header .nav-links, 
+    .header .btn-primary {
         display: none; 
     }
 
-    body .header .nav-logo {
+    .header .nav-logo {
         margin-right: auto;
         font-size: 18px;
     }
 
-    body .header .hamburger-icon {
+    .header .hamburger-icon {
         display: block;
         margin-left: auto;
         font-size: 24px;
@@ -747,37 +1020,39 @@ body {
     }
 
     /* Banner Section */
-    body .banner-section {
-        background-size: 100% 100%; 
+    .banner-section {
+       background-size: 100% 100%;         
+       min-height: 50vh;  
+       padding: 80px 0;
     }
 
-    body .banner-section .visual-wrapper {
+    .banner-section .visual-wrapper {
         width: 120px;
         margin: 0 auto;
     }
 
-    body .banner-section .mic-img { 
+    .banner-section .mic-img { 
         width: 30px; 
     }
 
-    body .banner-section .badge-new {
+    .banner-section .badge-new {
         font-size: 8px;
         top: 10px;
         right: 5px;
         padding: 2px 6px;
     }
 
-    body .banner-section .banner-title {
+    .banner-section .banner-title {
         font-size: 20px;
         margin: 10px 0;
     }
 
-    body .banner-section .banner-desc {
+    .banner-section .banner-desc {
         font-size: 11px;
         padding: 0 10px;
     }
 
-    body .banner-section .banner-actions {
+    .banner-section .banner-actions {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -785,8 +1060,8 @@ body {
     width: 100%;
     }
 
-   body .banner-section .btn-spotify, 
-   body .banner-section .btn-subscribe {
+   .banner-section .btn-spotify, 
+   .banner-section .btn-subscribe {
     width: auto; 
     height: 40px; 
     font-size: 11px;
@@ -798,28 +1073,28 @@ body {
     }
 
     /* Spotify */
-    body .banner-section .btn-spotify {
+    .banner-section .btn-spotify {
     padding: 0 25px; 
     }
 
     /* Subscribe */
-    body .banner-section .btn-subscribe {
+    .banner-section .btn-subscribe {
     padding: 0 18px; 
     }
 
     /* About Section */
-    body .about-section {
+    .about-section {
         padding: 40px 0 60px 0; 
     }
 
-    body .about-section .about-title {
+    .about-section .about-title {
         font-size: 28px; 
         font-weight: 800;
         margin-bottom: 12px;
         line-height: 1.2;
     }
 
-    body .about-section .about-desc {
+    .about-section .about-desc {
         font-size: 14px; 
         line-height: 1.6;
         width: 95%; 
@@ -827,47 +1102,47 @@ body {
         margin: 0 auto 20px;
         display: block;
     }
-    
-    body .about-section .about-sub-desc {
+
+    .about-section .about-sub-desc {
         font-size: 12px;
         margin-top: 15px;
         padding: 0 10px;
     }
 
     /* All Overlay Control */
-    body .about-section .overlay {
+    .about-section .overlay {
         opacity: 0; 
         pointer-events: auto; 
         transition: opacity 0.3s ease; 
     }
 
     /* Touch Effect */
-    body .about-section .overlay:active {
+    .about-section .overlay:active {
         opacity: 1;
     }
 
     /* Top Overlay*/
-    body .about-section .overlay.top {
+    .about-section .overlay.top {
         height: 35px;
     }
 
     /* Bottom Overlay*/
-    body .about-section .overlay.bottom {
+    .about-section .overlay.bottom {
     height: 55px; 
     }
 
     /* Middle Overlay */
-    body .about-section .overlay.divider-overlay {
+    .about-section .overlay.divider-overlay {
         height: 40px;
     }
 
-    body .about-section .divider-wrapper {
+    .about-section .divider-wrapper {
         margin: 25px 0; 
         height: 1px;
     }
 
     /* Stats */
-    body .about-section .stats-container {
+    .about-section .stats-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px 10px; 
@@ -875,68 +1150,68 @@ body {
         padding: 0 15px;
     }
 
-    body .about-section .stat-number { 
+    .about-section .stat-number { 
         font-size: 30px; 
         margin-bottom: 4px;
     }
 
-    body .about-section .stat-label { 
+    .about-section .stat-label { 
         font-size: 10px;
         letter-spacing: 0.5px;
     }
     
     /* Why Choose Section */
-    body .choose-section .section-title {
+    .choose-section .section-title {
     font-size: 24px; 
     }
 
-    body .choose-section .choose-grid {
+    .choose-section .choose-grid {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
     }
 
-    body .choose-section .choose-card {
+    .choose-section .choose-card {
     padding: 20px;
     border-radius: 20px;
     grid-column: auto ;
     grid-row: auto ;
     }
 
-    body .choose-section .choose-title { 
+    .choose-section .choose-title { 
     font-size: 17px; 
     margin-bottom: 8px;
     }
 
-    body .choose-section .choose-desc {
+    .choose-section .choose-desc {
     font-size: 13px;
     line-height: 1.4;
     }
 
     /* Features Episodes Section */
-    body .episodes-section {
+    .episodes-section {
         padding: 40px 0; 
     }
-    
-    body .episodes-section .section-title {
+
+    .episodes-section .section-title {
        font-size: 24px; 
     }
 
-    body .episodes-section .episodes-grid { 
+    .episodes-section .episodes-grid { 
         grid-template-columns: 1fr; 
     }
 
     /* Host Section */
-    body .host-section {
+    .host-section {
        padding: 10px 0 40px 0;
     }
-    
-    body .host-section .section-title {
+
+    .host-section .section-title {
       font-size: 24px;
     }
 
-    body .host-section .host-card {
+    .host-section .host-card {
       flex-direction: column;
       align-items: center; 
       padding: 30px 20px;
@@ -944,92 +1219,89 @@ body {
       text-align: center; 
     }
 
-    body .host-section .host-image-box { 
+    .host-section .host-image-box { 
       width: 180px; 
       height: 180px; 
     }
 
-    body .host-section .host-info {
+    .host-section .host-info {
       text-align: center; 
     }
 
-    body .host-section .host-name { 
+    .host-section .host-name { 
       font-size: 24px;
       margin-bottom: 10px;
     }
 
-   body .host-section .host-bio {
+   .host-section .host-bio {
       font-size: 14px;
       line-height: 1.5;
       margin-bottom: 20px;
     }
 
-    body .host-section .social-icons {
+    .host-section .social-icons {
       justify-content: center; 
       gap: 12px;
     }
     
     /* Footer Section */
-    body .footer-section {
-        padding: 20px 0 40px 0; 
-        background-size: 100% 100%;   
+    .footer-section {
+      padding: 20px 0 40px 0;
+      background-size: 100% 100%;
     }
 
-    /* Logo */
-    body .footer-logo {
-        font-size: 30px; 
-        margin-bottom: 15px;
+   /* Logo */
+   .footer-logo {
+      font-size: 30px;
+      margin-bottom: 20px; 
+      display: inline-block;
     }
 
-    body .footer-section .platform-list {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: center;
-        gap: 12px 30px; 
-        margin-bottom: 20px; 
-        width: 100%;
-    }
-    
-    body .platform-item img {
-        width: 16px; 
-        height: 16px;
-        object-fit: contain;
+    /* Platform List Icons - 2x2 grid */
+    .footer-section .platform-list {
+      display: grid;
+      grid-template-columns: 60px 105px; 
+      gap: 8px 0px; 
+      justify-content: center;
+      margin: 0 auto 25px auto;
     }
 
-    body .platform-item span {
-        font-size: 13px; 
-    }
-    
-    body .footer-divider {
-        width: 40%;
-        margin: 15px auto; 
+   .platform-list .platform-item:nth-child(3) {
+      margin-left: 22px; 
     }
 
-    body .copyright-text {
-        font-size: 12px;
+   .platform-list .platform-item:nth-child(4) {
+      margin-left: 30px; 
+    }
+
+   /* Platform Item Common Styles */
+   .platform-item {
+      display: flex;
+      align-items: center;
+      gap: 4px; 
+    }
+
+    .platform-item img {
+       width: 15px;
+       height: 15px;
+       object-fit: contain;
+    }
+
+    .platform-item span {
+      font-size: 11px;
+    }
+
+    /* Footer Divider Line */
+    .footer-divider {
+      width: 55%;          
+      height: 2px;        
+      margin: 20px auto;    
+    }
+
+   /* Copyright Text */
+   .copyright-text {
+     font-size: 10px; 
     }
 }
 
-/*Medium Device (576px to 992px) */
-@media screen and (min-width: 576px) and (max-width: 992px) {
-    .episodes-section .episodes-grid {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    body .header .nav-links, 
-    body .header .btn-primary { display: none; }
-    
-    body .header .hamburger-icon { display: block; }
-}
 
-/* Small Device (Up to 576px) */
-@media screen and (max-width: 576px) {
-    .episodes-section .episodes-grid,
-    .choose-section .choose-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    body .banner-section .banner-title { font-size: 20px; }
-    
-    body .copyright-text { font-size: 12px; }
-}
